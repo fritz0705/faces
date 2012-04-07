@@ -6,7 +6,7 @@ import bottle
 import pymongo
 import tornado.web, tornado.wsgi, tornado.httpserver, tornado.ioloop, tornado.netutil
 
-clintonfaces.db = pymongo.Connection().clintonfaces
+clintonfaces.app.db = pymongo.Connection().clintonfaces
 app = tornado.web.Application([
 	(r"/.*", tornado.web.FallbackHandler, dict(fallback=tornado.wsgi.WSGIContainer(clintonfaces.app)))
 ])

@@ -7,20 +7,19 @@ import jinja2
 static_file = bottle.static_file
 
 app = bottle.Bottle()
-db = None
-env = jinja2.Environment(loader=jinja2.FileSystemLoader("views/"))
+app.jinja2_env = jinja2.Environment(loader=jinja2.FileSystemLoader("views/"))
 
 def view(name, **kwargs):
-	return env.get_template(name + '.html').render(**kwargs)
+	return app.jinja2_env.get_template(name + '.html').render(**kwargs)
 
 @app.route("/")
 def show_all():
-	faces = db.faces.find()
+	faces = app.db.faces.find()
 	return view("index", faces=faces)
 
 @app.route("/<face:int>")
 def show_face(face):
-	face = db.faces.find_one({"number": face})
+	face = app.db.faces.find_one({"number": face})
 	return view("face", face=face)
 
 @app.route("/<face:int>/full")
