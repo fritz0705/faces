@@ -25,11 +25,11 @@ def show_face(face):
 
 @app.route("/<face:int>/full")
 def show_full_face(face):
-	return static_file("{0}.jpg".format(face), root='faces/', mimetype="image/jpeg")
+	return static_file("{0}.png".format(face), root='faces/', mimetype="image/png")
 
 @app.route("/<face:int>/thumb")
 def show_thumb_face(face):
-	return static_file("{0}.jpg".format(face), root='thumbs/', mimetype="image/jpeg")
+	return static_file("{0}.png".format(face), root='thumbs/', mimetype="image/png")
 
 @app.route("/static/<path:path>")
 def static(path):
