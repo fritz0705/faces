@@ -1,3 +1,5 @@
+$color: #5dcf30;
+
 body {
 	font: {
 		family: 'Open Sans', 'DejaVu Sans Serif', 'Arial', 'Helvetica', sans-serif;
@@ -8,8 +10,8 @@ body {
 	padding: 0px;
 
 	& > header {
-		background: #5DCF30;
-		color: #ffffff;
+		background: $color;
+		color: darken($color, 60%);
 		height: 60px;
 
 		h1 {
@@ -31,9 +33,9 @@ body {
 		}
 
 		input#face_url {
-			border: 2px solid lighten(#5dcf30, 20%);
+			border: 2px solid lighten($color, 20%);
 			border-radius: 5px;
-			background: lighten(#5dcf30, 60%);
+			background: lighten($color, 60%);
 			font-size: 16px;
 			padding: 5px;
 			width: 500px;
@@ -76,7 +78,8 @@ a {
 }
 
 .faces {
-	width: 870px;
+	width: 880px;
+	font-size: 0px;
 
 	.face {
 		width: 150px;
@@ -89,14 +92,12 @@ a {
 		-webkit-transition: opacity 0.5s;
 		-moz-transition: opacity 0.5s;
 
+		border: 3px solid $color;
+
 		&:hover {
 			opacity: 1;
 		}
 	}
-}
-
-img {
-	border: 1px solid #7f7f7f;
 }
 
 .email {
