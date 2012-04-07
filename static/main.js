@@ -7,4 +7,8 @@ $(function() {
 		face_url_e.select();
 		return false;
 	});
+
+	$(".face a").dblclick(function() {
+		window.location.replace(url_prefix + $(this).attr('href'));
+	});
 });
