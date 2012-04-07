@@ -26,6 +26,13 @@ body {
 			text-transform: uppercase;
 		}
 	}
+
+	& > footer {
+		font-size: 12px;
+		color: #444444;
+		margin-top: 20px;
+		margin-left: 170px;
+	}
 }
 
 a {
