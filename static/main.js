@@ -10,8 +10,13 @@ $(function () {
 
 	$(".face a").click(function () {
 		var url = url_prefix + $(this).attr('href');
+		if (face_url_e.val() == url) {
+			return true;
+		}
 		face_url_e.val(url);
 		face_url_e.select();
 		return false;
+	}).dblclick(function () {
+		window.location.assign(url_prefix + $(this).attr('href'));
 	});
 });
