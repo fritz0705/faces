@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+<article class="face standalone">
+	<img height="600" width="600" src="/{{ face.number | int }}/full" alt="{{ face.tags | join(" ") }}" />
+</article>
+{% endblock %}

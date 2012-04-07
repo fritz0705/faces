@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="faces">
+	{% for face in faces %}
+	<article class="face">
+		<a href="/{{ face.number | int }}">
+			<img height="150" width="150" src="/{{ face.number | int }}/thumb" alt="{{ face.tags | join(" ") }}" />
+		</a>
+	</article>
+	{% endfor %}
+</section>
+{% endblock %}
