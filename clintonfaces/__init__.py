@@ -20,6 +20,8 @@ def show_all():
 @app.route("/<face:int>")
 def show_face(face):
 	face = app.db.faces.find_one({"number": face})
+	if not face:
+		bottle.abort(404)
 	return view("face", face=face)
 
 @app.route("/<face:int>/full")
@@ -33,4 +35,12 @@ def show_thumb_face(face):
 @app.route("/static/<path:path>")
 def static(path):
 	return static_file(path, root='static/')
+
+@app.route("/faces/<path:path>")
+def face(path):
+	return static_file(path, root='faces/')
+
+@app.route("/thumbs/<path:path>")
+def thumb(path):
+	return static_file(path, root='thumbs/')
 
