@@ -21,23 +21,38 @@ body {
 			font-size: 15px;
 
 			margin-left: 170px;
+			margin-right: 20px;
 			padding-top: 18px;
 
 			text-transform: uppercase;
+			a:hover {
+				text-decoration: inherit;
+			}
 		}
 	}
 
 	& > footer {
 		font-size: 12px;
-		color: #444444;
+		color: #666666;
 		margin-top: 20px;
 		margin-left: 170px;
+
+		transition: color 0.3s;
+		-webkit-transition: color 0.3s;
+		-moz-transition: color 0.3s;
+
+		&:hover {
+			color: #444444;
+		}
 	}
 }
 
 a {
 	color: inherit;
 	text-decoration: inherit;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 #content {
@@ -53,9 +68,22 @@ a {
 		height: 150px;
 		display: inline-block;
 		margin: 10px;
+
+		opacity: 0.9;
+		transition: opacity 0.5s;
+		-webkit-transition: opacity 0.5s;
+		-moz-transition: opacity 0.5s;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
 img {
 	border: 1px solid #7f7f7f;
+}
+
+.email {
+	color: #252525;
 }
