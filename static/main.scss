@@ -83,6 +83,7 @@ a {
 #content {
 	margin-top: 20px;
 	margin-left: 170px;
+	width: 880px;
 }
 
 .faces {
@@ -106,6 +107,10 @@ a {
 			opacity: 1;
 		}
 	}
+}
+
+.standalone {
+	text-align: center;
 }
 
 .email {
